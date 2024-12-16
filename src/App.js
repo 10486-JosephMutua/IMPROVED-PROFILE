@@ -1,0 +1,66 @@
+import React from "react";
+import Star from "./Star";
+import "./style.css";
+
+export default function App() {
+
+  const [contact,setcontact]=React.useState({
+firstName : "Joseph",
+lastName : "Mutua",
+phone : "0799131933",
+email : "kavengisusan@gmal.com",
+county : "Mombasa",
+img1 : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR-Tdq80brA-9Z8twQwt9lObNzhKnE5wZfbHg&s",
+img2 : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQb5cmu5Za0QZ8KR1XbxDO8wNIPtMTurpwVDg&s",
+isFavoerite : true
+  })
+
+  let img1 = "data:image/png;base64,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"
+let img2 = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQb5cmu5Za0QZ8KR1XbxDO8wNIPtMTurpwVDg&s"
+   
+
+  function toggleFavourite(){
+
+  setcontact(prev => {
+
+    return{
+     ...prev,
+      isFavoerite: !prev.isFavoerite
+    }
+  })
+
+  
+
+  }
+  return (
+    <div  >
+      <article>
+< img src="data:image/png;base64,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"  alt="avatar" className="avater"/>
+
+{/* <button onClick={toggleFavourite} aria-pressed={false}  aria-label={contact.isFavorite ? "Remove from favorites" : "Add to favorites"} className="favourite-btn">
+
+
+
+<img src={toggle} alt={contact.isFavoerite}/>
+</button> */}
+<Star
+onClick={toggleFavourite}
+isFilled={contact.isFavoerite}
+img1={contact.img1}
+img2={contact.img2}
+
+/>
+
+
+
+<div className="info">
+<h2 > Name: {contact.firstName} {contact.lastName}</h2>
+<h3>County: {contact.county}</h3>
+<p className="phone">phone: {contact.phone}</p>
+<p className="email">Email: {contact.email}</p>
+
+</div>
+      </article>
+    </div>
+  );
+}
